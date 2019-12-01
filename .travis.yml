@@ -1,0 +1,26 @@
+# Demyx
+# https://demyx.sh
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+services:
+  - docker
+
+env:
+  - DEMYX_USERNAME=demyx DEMYX_REPOSITORY=traefik
+
+before_install:
+  - docker pull traefik
+
+script:
+  - docker build --no-cache -t demyx/"$DEMYX_REPOSITORY" .
+  - docker run -d --rm --name=traefik traefik
+  - docker exec -t traefik traefik version
+
+after_success:
+  - echo "$DEMYX_PASSWORD" | docker login -u "$DEMYX_USERNAME" --password-stdin
+  - docker push demyx/"$DEMYX_REPOSITORY"
+  - bash travis.sh
