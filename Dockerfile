@@ -1,5 +1,4 @@
-FROM traefik as demyx_traefik
-FROM alpine
+FROM traefik
 
 LABEL sh.demyx.image demyx/traefik
 LABEL sh.demyx.maintainer Demyx <info@demyx.sh>
@@ -18,24 +17,6 @@ RUN set -ex; \
     adduser -u 1000 -D -S -G demyx demyx; \
     apk add --no-cache --update tzdata
 
-# Copy Traefik binary
-COPY --from=demyx_traefik /etc/ssl/certs /etc/ssl/certs
-COPY --from=demyx_traefik /usr/local/bin/traefik /
-
-# Remove all binaries
-RUN set -ex; \
-    rm -rf /usr/local/bin; \
-    rm -rf /usr/local/sbin; \
-    rm -rf /usr/sbin; \
-    rm -rf /usr/bin; \
-    rm -rf /sbin; \
-    rm -rf /bin
-
-# Set PATH to null
-ENV PATH=
-
 EXPOSE 8081 8082
 
 USER demyx
-
-ENTRYPOINT ["/traefik"]
