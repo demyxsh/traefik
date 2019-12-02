@@ -6,7 +6,7 @@
 [![Traefik](https://img.shields.io/badge/traefik-2.0.5-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 
-Non-root Docker image running Alpine Linux and Traefik. This image has been stripped of all binaries except Traefik to further lock down the container. 
+Non-root Docker image running Alpine Linux and Traefik. Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need.
 
 DEMYX | TRAEFIK
 --- | ---
