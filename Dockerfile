@@ -17,6 +17,21 @@ RUN set -ex; \
     adduser -u 1000 -D -S -G demyx demyx; \
     apk add --no-cache --update tzdata
 
+# Remove all binaries
+RUN set -ex; \
+	mv /usr/local/bin/traefik /; \
+	rm -rf /usr/local/bin; \
+	rm -rf /usr/local/sbin; \
+	rm -rf /usr/sbin; \
+	rm -rf /usr/bin; \
+	rm -rf /sbin; \
+	rm -rf /bin
+
+# Set PATH to null
+ENV PATH=
+
 EXPOSE 8081 8082
 
 USER demyx
+
+ENTRYPOINT ["/traefik"]
