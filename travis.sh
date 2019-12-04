@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Demyx
 # https://demyx.sh
 # https://github.com/peter-evans/dockerhub-description/blob/master/entrypoint.sh
@@ -6,12 +6,12 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Get versions
-DEMYX_ALPINE_VERSION="$(docker exec -t traefik cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed -e 's/\r//g')"
-DEMYX_TRAEFIK_VERSION="$(docker exec -t traefik traefik version | head -n1 | awk '{print $2}' | sed -e 's/\r//g')"
+DEMYX_ALPINE_VERSION="$(docker run --rm --name="$DEMYX_REPOSITORY" --entrypoint=cat demyx/"$DEMYX_REPOSITORY" /etc/os-release | grep VERSION_ID | cut -c 12- | sed -e 's/\r//g')"
+DEMYX_TRAEFIK_VERSION="$(docker run --rm --name="$DEMYX_REPOSITORY" demyx/"$DEMYX_REPOSITORY" version | sed -n 1p | awk '{print $2}' | sed -e 's/\r//g')"
 
 # Replace versions
 sed -i "s|alpine-.*.-informational|alpine-${DEMYX_ALPINE_VERSION}-informational|g" README.md
-sed -i "s|traefik-.*.-informational|traefik-${DEMYX_TRAEFIK_VERSION}-informational|g" README.md
+sed -i "s|${DEMYX_REPOSITORY}-.*.-informational|${DEMYX_REPOSITORY}-${DEMYX_TRAEFIK_VERSION}-informational|g" README.md
 
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"
