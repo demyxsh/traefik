@@ -27,4 +27,4 @@ EXPOSE 8081 8082
 
 USER demyx
 
-ENTRYPOINT ["/traefik"]
+ENTRYPOINT ["traefik"]

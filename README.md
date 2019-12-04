@@ -11,7 +11,7 @@ Non-root Docker image running Alpine Linux and Traefik. Traefik is a modern HTTP
 DEMYX | TRAEFIK
 --- | ---
 USER | demyx
-ENTRYPOINT | ["/traefik"]
+ENTRYPOINT | ["traefik"]
 PORT | 8080 8081 8082
 
 ## Updates & Support
