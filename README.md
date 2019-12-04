@@ -2,8 +2,8 @@
 [![Build Status](https://img.shields.io/travis/demyxco/traefik?style=flat)](https://travis-ci.org/demyxco/traefik)
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/traefik?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
-[![Alpine](https://img.shields.io/badge/alpine-3.10.2-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
-[![Traefik](https://img.shields.io/badge/traefik-2.0.5-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
+[![Alpine](https://img.shields.io/badge/alpine-3.10.3-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
+[![Traefik](https://img.shields.io/badge/traefik-2.0.6-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 
 Non-root Docker image running Alpine Linux and Traefik. Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need.
