@@ -30,7 +30,7 @@ These are the default environment variables.
 
 ```
 - TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS=:8081    # http is the insecure entrypoint name
-- TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS=:8082   # https is the insecure entrypoint name
+- TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS=:8082   # https is the secure entrypoint name
 - TZ=America/Los_Angeles
 ```
 
