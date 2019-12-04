@@ -17,18 +17,11 @@ RUN set -ex; \
     adduser -u 1000 -D -S -G demyx demyx; \
     apk add --no-cache --update tzdata
 
-# Remove all binaries
+# Lockdown
 RUN set -ex; \
-	mv /usr/local/bin/traefik /; \
-	rm -rf /usr/local/bin; \
-	rm -rf /usr/local/sbin; \
-	rm -rf /usr/sbin; \
-	rm -rf /usr/bin; \
-	rm -rf /sbin; \
-	rm -rf /bin
-
-# Set PATH to null
-ENV PATH=
+	rm -f /bin/sh; \
+	rm -f /bin/ash; \
+	rm -f /usr/bin/wget
 
 EXPOSE 8081 8082
 
