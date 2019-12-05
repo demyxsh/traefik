@@ -54,6 +54,7 @@ docker run -d \
 -e TRAEFIK_PROVIDERS_DOCKER_ENDPOINT=tcp://demyx_socket:2375 \
 -p 80:8081 \
 -p 443:8082 \
+-v traefik:/demyx \     # Point your acme.json storage to this directory (ex: /demyx/acme.json)
 demyx/traefik
 ```
 
