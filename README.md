@@ -2,8 +2,8 @@
 [![Build Status](https://img.shields.io/travis/demyxco/traefik?style=flat)](https://travis-ci.org/demyxco/traefik)
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/traefik?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
-[![Alpine](https://img.shields.io/badge/alpine-3.10.3-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
-[![Traefik](https://img.shields.io/badge/traefik-2.1.2-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
+[![Alpine](https://img.shields.io/badge/alpine-3.10.4-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
+[![Traefik](https://img.shields.io/badge/traefik-2.1.3-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 [![Become a Patron!](https://img.shields.io/badge/become%20a%20patron-$5-informational?style=flat&color=blue)](https://www.patreon.com/bePatron?u=23406156)
 
