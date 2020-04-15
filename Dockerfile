@@ -24,11 +24,10 @@ RUN set -ex; \
 RUN set -ex; \
     apk add --no-cache --update tzdata
 
-# Lockdown
+# Finalize
 RUN set -ex; \
-	rm -f /bin/sh; \
-	rm -f /bin/ash; \
-	rm -f /usr/bin/wget
+    # Lockdown
+	chmod o-x /bin/busybox; \
 
 EXPOSE 8081 8082
 
