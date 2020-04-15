@@ -30,7 +30,7 @@ RUN set -ex; \
 # Finalize
 RUN set -ex; \
     # Lockdown
-	chmod o-x /bin/busybox; \
+	chmod o-x /bin/busybox
 
 EXPOSE 8081 8082
 
