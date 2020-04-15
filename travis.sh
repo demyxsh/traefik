@@ -13,6 +13,10 @@ DEMYX_TRAEFIK_VERSION="$(docker run --rm --name="$DEMYX_REPOSITORY" demyx/"$DEMY
 sed -i "s|alpine-.*.-informational|alpine-${DEMYX_ALPINE_VERSION}-informational|g" README.md
 sed -i "s|${DEMYX_REPOSITORY}-.*.-informational|${DEMYX_REPOSITORY}-${DEMYX_TRAEFIK_VERSION}-informational|g" README.md
 
+# Echo versions to file
+echo "DEMYX_ALPINE_VERSION=$DEMYX_ALPINE_VERSION
+DEMYX_TRAEFIK_VERSION=$DEMYX_TRAEFIK_VERSION" > VERSION
+
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
