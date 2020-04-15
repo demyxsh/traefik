@@ -1,15 +1,15 @@
 FROM traefik
 
-LABEL sh.demyx.image demyx/traefik
-LABEL sh.demyx.maintainer Demyx <info@demyx.sh>
-LABEL sh.demyx.url https://demyx.sh
-LABEL sh.demyx.github https://github.com/demyxco
-LABEL sh.demyx.registry https://hub.docker.com/u/demyx
+LABEL sh.demyx.image        demyx/traefik
+LABEL sh.demyx.maintainer   Demyx <info@demyx.sh>
+LABEL sh.demyx.url          https://demyx.sh
+LABEL sh.demyx.github       https://github.com/demyxco
+LABEL sh.demyx.registry     https://hub.docker.com/u/demyx
 
 # Set default environment variables
-ENV TZ=America/Los_Angeles
-ENV TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS=:8081
-ENV TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS=:8082
+ENV TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS    :8081
+ENV TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS   :8082
+ENV TZ                                  America/Los_Angeles
 
 # Create demyx user and configure
 RUN set -ex; \
