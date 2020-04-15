@@ -11,12 +11,18 @@ ENV TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS    :8081
 ENV TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS   :8082
 ENV TZ                                  America/Los_Angeles
 
-# Create demyx user and configure
+# Configure Demyx
 RUN set -ex; \
     addgroup -g 1000 -S demyx; \
     adduser -u 1000 -D -S -G demyx demyx; \
-    apk add --no-cache --update tzdata; \
-    install -d -m 0755 -o demyx -g demyx /demyx
+    \
+    install -d -m 0755 -o demyx -g demyx "$DEMYX_TRAEFIK_ROOT"; \
+    install -d -m 0755 -o demyx -g demyx "$DEMYX_TRAEFIK_CONFIG"; \
+    install -d -m 0755 -o demyx -g demyx "$DEMYX_TRAEFIK_LOG"
+
+# Packages
+RUN set -ex; \
+    apk add --no-cache --update tzdata
 
 # Lockdown
 RUN set -ex; \
