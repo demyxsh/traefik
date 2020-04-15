@@ -15,17 +15,6 @@ USER | demyx
 ENTRYPOINT | ["traefik"]
 PORT | 8080 8081 8082
 
-## Updates & Support
-[![Code Size](https://img.shields.io/github/languages/code-size/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Repository Size](https://img.shields.io/github/repo-size/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Watches](https://img.shields.io/github/watchers/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Stars](https://img.shields.io/github/stars/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Forks](https://img.shields.io/github/forks/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-
-* Auto built weekly on Sundays (America/Los_Angeles)
-* Rolling release updates
-* For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
-
 ## Environment Variables
 These are the default environment variables.
 
@@ -60,3 +49,14 @@ demyx/traefik
 ```
 
 For more configurations, see Traefik's official documentations: https://docs.traefik.io.
+
+## Updates & Support
+[![Code Size](https://img.shields.io/github/languages/code-size/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
+[![Repository Size](https://img.shields.io/github/repo-size/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
+[![Watches](https://img.shields.io/github/watchers/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
+[![Stars](https://img.shields.io/github/stars/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
+[![Forks](https://img.shields.io/github/forks/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
+
+* Auto built weekly on Sundays (America/Los_Angeles)
+* Rolling release updates
+* For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
