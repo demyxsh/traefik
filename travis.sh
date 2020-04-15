@@ -6,7 +6,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Get versions
-DEMYX_ALPINE_VERSION="$(docker exec "$DEMYX_REPOSITORY" cat demyx/"$DEMYX_REPOSITORY" /etc/os-release | grep VERSION_ID | cut -c 12- | sed -e 's/\r//g')"
+DEMYX_ALPINE_VERSION="$(docker exec --user=root "$DEMYX_REPOSITORY" cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed -e 's/\r//g')"
 DEMYX_TRAEFIK_VERSION="$(docker exec "$DEMYX_REPOSITORY" "$DEMYX_REPOSITORY" version | sed -n 1p | awk '{print $2}' | sed -e 's/\r//g')"
 
 # Replace versions
