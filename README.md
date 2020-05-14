@@ -41,7 +41,10 @@ demyx/docker-socket-proxy
 docker run -d \
 --name=traefik \
 --network=demyx_socket \
--e TRAEFIK_PROVIDERS_DOCKER_ENDPOINT=tcp://demyx_socket:2375 \
+-e DEMYX=/demyx \
+-e DEMYX_CONFIG=/etc/demyx \
+-e DEMYX_LOG=/var/log/demyx \
+-e DEMYX_ACME_EMAIL=info@domain.tld \
 -p 80:8081 \
 -p 443:8082 \
 -v traefik:/demyx \     # Point your acme.json storage to this directory (ex: /demyx/acme.json)

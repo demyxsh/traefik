@@ -7,12 +7,10 @@ LABEL sh.demyx.github       https://github.com/demyxco
 LABEL sh.demyx.registry     https://hub.docker.com/u/demyx
 
 # Set default environment variables
-ENV TRAEFIK_ROOT                        /demyx
-ENV TRAEFIK_CONFIG                      /etc/demyx
-ENV TRAEFIK_LOG                         /var/log/demyx
-ENV TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS    :8081
-ENV TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS   :8082
-ENV TZ                                  America/Los_Angeles
+ENV DEMYX                   /demyx
+ENV DEMYX_CONFIG            /etc/demyx
+ENV DEMYX_LOG               /var/log/demyx
+ENV TZ                      America/Los_Angeles
 
 # Configure Demyx
 RUN set -ex; \
