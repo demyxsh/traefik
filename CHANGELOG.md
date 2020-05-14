@@ -3,6 +3,7 @@
 ## 2020-05-13
 ### Changed
 - Renamed environment variables
+- Use a YAML file to configure Traefik
 
 ## 2020-04-14
 ### Changed

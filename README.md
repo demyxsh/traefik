@@ -12,17 +12,8 @@ Non-root Docker image running Alpine Linux and Traefik. Traefik is a modern HTTP
 DEMYX | TRAEFIK
 --- | ---
 USER | demyx
-ENTRYPOINT | ["traefik"]
+ENTRYPOINT | ["demyx-traefik"]
 PORT | 8080 8081 8082
-
-## Environment Variables
-These are the default environment variables.
-
-```
-- TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS=:8081    # http is the insecure entrypoint name
-- TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS=:8082   # https is the secure entrypoint name
-- TZ=America/Los_Angeles
-```
 
 ## Usage
 Since a non-root user can't access docker.sock, this image depends on my lockdown docker.sock proxy [container](https://github.com/demyxco/docker-socket-proxy).
@@ -44,6 +35,7 @@ docker run -d \
 -e DEMYX=/demyx \
 -e DEMYX_CONFIG=/etc/demyx \
 -e DEMYX_LOG=/var/log/demyx \
+-e DEMYX_ENDPOINT=tcp://demyx_socket:2375 \
 -e DEMYX_ACME_EMAIL=info@domain.tld \
 -p 80:8081 \
 -p 443:8082 \
