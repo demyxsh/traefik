@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2020-05-16
+### Changed
+- Add null as default value for temporary environment variable or else container will fail
+
 ## 2020-05-13
 ### Changed
 - Renamed environment variables
