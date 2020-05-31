@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2020-05-31
+### Changed
+- Enable dashboard
+
 ## 2020-05-16
 ### Changed
 - Add null as default value for temporary environment variable or else container will fail

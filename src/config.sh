@@ -41,7 +41,8 @@ providers:
     exposedByDefault: false
 
 api:
-  dashboard: false
+  dashboard: true
+  insecure: true
 
 log:
   level: INFO
