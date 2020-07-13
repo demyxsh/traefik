@@ -1,3 +1,12 @@
+FROM golang:alpine as demyx_go
+
+COPY src /build
+
+RUN set -ex; \
+    cd /build; \
+    go mod init github.com/demyxco/traefik; \
+    go build
+
 FROM traefik
 
 LABEL sh.demyx.image        demyx/traefik
@@ -11,7 +20,6 @@ ENV DEMYX                   /demyx
 ENV DEMYX_CONFIG            /etc/demyx
 ENV DEMYX_LOG               /var/log/demyx
 ENV DEMYX_ENDPOINT          tcp://demyx_socket:2375
-ENV DEMYX_TRUSTED_IPS       173.245.48.0/20,103.21.244.0/22,103.22.200.0/22,103.31.4.0/22,141.101.64.0/18,108.162.192.0/18,190.93.240.0/20,188.114.96.0/20,197.234.240.0/22,198.41.128.0/17,162.158.0.0/15,104.16.0.0/12,172.64.0.0/13,131.0.72.0/22
 ENV TZ                      America/Los_Angeles
 
 # Configure Demyx
@@ -25,21 +33,19 @@ RUN set -ex; \
 
 # Packages
 RUN set -ex; \
-    apk add --no-cache --update bash dumb-init tzdata
+    apk add --no-cache --update tzdata
 
-# Copy source
-COPY src "$DEMYX_CONFIG"
+# Copy entrypoint
+COPY --from=demyx_go /build/traefik /usr/local/bin/demyx-entrypoint
+
+# Keep a local copy of Cloudflare's IPs
+RUN set -ex; \
+    DEMYX_IPV4="$(wget -qO- https://www.cloudflare.com/ips-v4 | tr '\n' ',')"; \
+    DEMYX_IPV6="$(wget -qO- https://www.cloudflare.com/ips-v6 | tr '\n' ',' | sed 's/.$//')"; \
+    echo "$(echo "$DEMYX_IPV4")$(echo "$DEMYX_IPV6")" > "$DEMYX_CONFIG"/cf_ips
 
 # Finalize
 RUN set -ex; \
-    # demyx-config
-    mv "$DEMYX_CONFIG"/config.sh /usr/local/bin/demyx-config; \
-    chmod +x /usr/local/bin/demyx-config; \
-    \
-    # demyx-entrypoint
-    mv "$DEMYX_CONFIG"/entrypoint.sh /usr/local/bin/demyx-entrypoint; \
-    chmod +x /usr/local/bin/demyx-entrypoint; \
-    \
     # Lockdown
     chmod o-x /bin/busybox
 
