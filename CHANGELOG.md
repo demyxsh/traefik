@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2020-07-13
+### Changed
+- The entrypoint is now a Golang binary
+- DEMYX_ACME_EMAIL must be set or the container will exit
+
 ## 2020-05-31
 ### Changed
 - Enable dashboard
