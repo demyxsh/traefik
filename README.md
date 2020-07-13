@@ -18,6 +18,7 @@ PORT | 8080 8081 8082
 ## Usage
 - Since a non-root user can't access docker.sock, this image depends on my lockdown docker.sock proxy [container](https://github.com/demyxco/docker-socket-proxy).
 - DEMYX_ACME_EMAIL must be set or the container will exit.
+
 ```
 # Start the docker.sock proxy container first
 docker run -d \
