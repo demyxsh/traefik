@@ -13,6 +13,7 @@ env:
   - DEMYX_USERNAME=demyx DEMYX_REPOSITORY=traefik
 
 before_install:
+  - docker pull golang:alpine
   - docker pull traefik
 
 script:
