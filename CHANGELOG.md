@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 2021-03-08
+- Added
+- Changed
+    - Renamed src to config.
+    - `Dockerfile`
+        - Update COPY directory.
+        - Rearrange RUN commands.
+        - Add bash to packages.
+        - Update bash PS1.
+        - Update COPY directory.
+        - Move some commands to finalize RUN.
+- Removed
+
 ## 2020-07-13
 ### Changed
 - The entrypoint is now a Golang binary
