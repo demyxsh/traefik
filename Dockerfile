@@ -1,6 +1,7 @@
 FROM golang:alpine as demyx_go
 
-COPY src /build
+# Imports
+COPY config /build
 
 RUN set -ex; \
     cd /build; \
@@ -22,30 +23,35 @@ ENV DEMYX_LOG               /var/log/demyx
 ENV DEMYX_ENDPOINT          tcp://demyx_socket:2375
 ENV TZ                      America/Los_Angeles
 
+# Packages
+RUN set -ex; \
+    apk add --no-cache --update bash tzdata
+
 # Configure Demyx
 RUN set -ex; \
+    # Create demyx user
     addgroup -g 1000 -S demyx; \
     adduser -u 1000 -D -S -G demyx demyx; \
     \
+    # Create demyx directories
     install -d -m 0755 -o demyx -g demyx "$DEMYX"; \
     install -d -m 0755 -o demyx -g demyx "$DEMYX_CONFIG"; \
-    install -d -m 0755 -o demyx -g demyx "$DEMYX_LOG"
+    install -d -m 0755 -o demyx -g demyx "$DEMYX_LOG"; \
+    \
+    # Update .bashrc
+    echo 'PS1="$(whoami)@\h:\w \$ "' > /home/demyx/.bashrc; \
+    echo 'PS1="$(whoami)@\h:\w \$ "' > /root/.bashrc
 
-# Packages
-RUN set -ex; \
-    apk add --no-cache --update tzdata
-
-# Copy entrypoint
-COPY --from=demyx_go /build/traefik /usr/local/bin/demyx-entrypoint
-
-# Keep a local copy of Cloudflare's IPs
-RUN set -ex; \
-    DEMYX_IPV4="$(wget -qO- https://www.cloudflare.com/ips-v4 | tr '\n' ',')"; \
-    DEMYX_IPV6="$(wget -qO- https://www.cloudflare.com/ips-v6 | tr '\n' ',' | sed 's/.$//')"; \
-    echo "$(echo "$DEMYX_IPV4")$(echo "$DEMYX_IPV6")" > "$DEMYX_CONFIG"/cf_ips
+# Imports
+COPY --from=demyx_go /build/traefik /usr/local/bin/demyx-entrypoint    
 
 # Finalize
 RUN set -ex; \
+    # Keep a local copy of Cloudflare's IPs
+    DEMYX_IPV4="$(wget -qO- https://www.cloudflare.com/ips-v4 | tr '\n' ',')"; \
+    DEMYX_IPV6="$(wget -qO- https://www.cloudflare.com/ips-v6 | tr '\n' ',' | sed 's/.$//')"; \
+    echo "$(echo "$DEMYX_IPV4")$(echo "$DEMYX_IPV6")" > "$DEMYX_CONFIG"/cf_ips; \
+    \
     # Lockdown
     chmod o-x /bin/busybox
 
