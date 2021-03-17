@@ -20,7 +20,7 @@ git config --global user.name "Travis CI"
 git remote set-url origin https://"$DEMYX_GITHUB_TOKEN"@github.com/demyxco/"$DEMYX_REPOSITORY".git
 # Commit VERSION first
 git add VERSION
-git commit -m "ALPINE $DEMYX_BROWSERSYNC_ALPINE_VERSION, NODE $DEMYX_BROWSERSYNC_NODE_VERSION, BROWSERSYNC $DEMYX_BROWSERSYNC_VERSION"
+git commit -m "ALPINE $DEMYX_TRAEFIK_ALPINE_VERSION, TRAEFIK $DEMYX_TRAEFIK_VERSION"
 git push origin HEAD:master
 # Commit the rest
 git add .
