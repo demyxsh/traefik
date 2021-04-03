@@ -6,6 +6,7 @@ COPY config /build
 RUN set -ex; \
     cd /build; \
     go mod init github.com/demyxco/traefik; \
+    go mod tidy; \
     go build
 
 FROM traefik

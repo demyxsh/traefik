@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2021-04-03
+- Added
+    - `Dockerfile`
+        - go mod tidy
+- Changed
+- Removed
+
 ## 2021-03-08
 - Added
 - Changed
