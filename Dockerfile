@@ -49,7 +49,7 @@ COPY --from=demyx_go /build/traefik /usr/local/bin/demyx-entrypoint
 # Finalize
 RUN set -ex; \
     # Keep a local copy of Cloudflare's IPs
-    DEMYX_IPV4="$(wget -qO- https://www.cloudflare.com/ips-v4 | tr '\n' ',')"; \
+    DEMYX_IPV4="$(wget -qO- https://www.cloudflare.com/ips-v4 | tr '\n' ','; echo ',')"; \
     DEMYX_IPV6="$(wget -qO- https://www.cloudflare.com/ips-v6 | tr '\n' ',' | sed 's/.$//')"; \
     echo "$(echo "$DEMYX_IPV4")$(echo "$DEMYX_IPV6")" > "$DEMYX_CONFIG"/cf_ips; \
     \
