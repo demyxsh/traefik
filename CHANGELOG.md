@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 2021-08-16
-- Last comma is removed for some reason, echo one out [554a19d](https://github.com/demyxco/traefik/commit/554a19d370fb6e12b81a10cf77e25455bd6434e3)
+- Last comma is removed for some reason, echo one out [554a19d](https://github.com/demyxsh/traefik/commit/554a19d370fb6e12b81a10cf77e25455bd6434e3)
 
 ## 2021-04-03
 - Added

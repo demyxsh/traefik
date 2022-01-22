@@ -5,7 +5,7 @@ COPY config /build
 
 RUN set -ex; \
     cd /build; \
-    go mod init github.com/demyxco/traefik; \
+    go mod init github.com/demyxsh/traefik; \
     go mod tidy; \
     go build
 
@@ -14,7 +14,7 @@ FROM traefik
 LABEL sh.demyx.image        demyx/traefik
 LABEL sh.demyx.maintainer   Demyx <info@demyx.sh>
 LABEL sh.demyx.url          https://demyx.sh
-LABEL sh.demyx.github       https://github.com/demyxco
+LABEL sh.demyx.github       https://github.com/demyxsh
 LABEL sh.demyx.registry     https://hub.docker.com/u/demyx
 
 # Set default environment variables

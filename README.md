@@ -1,5 +1,10 @@
 # traefik
-[![Build Status](https://img.shields.io/travis/demyxco/traefik?style=flat)](https://travis-ci.org/demyxco/traefik)
+[![demyxsh/traefik](https://github.com/demyxsh/traefik/actions/workflows/main.yml/badge.svg)](https://github.com/demyxsh/traefik/actions/workflows/main.yml)
+[![Code Size](https://img.shields.io/github/languages/code-size/demyxsh/traefik?style=flat&color=blue)](https://github.com/demyxsh/traefik)
+[![Repository Size](https://img.shields.io/github/repo-size/demyxsh/traefik?style=flat&color=blue)](https://github.com/demyxsh/traefik)
+[![Watches](https://img.shields.io/github/watchers/demyxsh/traefik?style=flat&color=blue)](https://github.com/demyxsh/traefik)
+[![Stars](https://img.shields.io/github/stars/demyxsh/traefik?style=flat&color=blue)](https://github.com/demyxsh/traefik)
+[![Forks](https://img.shields.io/github/forks/demyxsh/traefik?style=flat&color=blue)](https://github.com/demyxsh/traefik)
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/traefik?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
 [![Alpine](https://img.shields.io/badge/alpine-3.11.11-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/traefik)
@@ -15,8 +20,14 @@ USER | demyx
 ENTRYPOINT | ["demyx-entrypoint"]
 PORT | 8080 8081 8082
 
+## NOTICE
+This repository has been moved to the organization [demyxsh](https://github.com/demyxsh); please update the remote URL.
+```
+git remote set-url origin git@github.com:demyxsh/traefik.git
+```
+
 ## Usage
-- Since a non-root user can't access docker.sock, this image depends on my lockdown docker.sock proxy [container](https://github.com/demyxco/docker-socket-proxy).
+- Since a non-root user can't access docker.sock, this image depends on my lockdown docker.sock proxy [container](https://github.com/demyxsh/docker-socket-proxy).
 - DEMYX_ACME_EMAIL must be set or the container will exit.
 
 ```
@@ -47,12 +58,6 @@ demyx/traefik
 For more configurations, see Traefik's official documentations: https://docs.traefik.io.
 
 ## Updates & Support
-[![Code Size](https://img.shields.io/github/languages/code-size/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Repository Size](https://img.shields.io/github/repo-size/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Watches](https://img.shields.io/github/watchers/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Stars](https://img.shields.io/github/stars/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-[![Forks](https://img.shields.io/github/forks/demyxco/traefik?style=flat&color=blue)](https://github.com/demyxco/traefik)
-
 * Auto built weekly on Saturdays (America/Los_Angeles)
 * Rolling release updates
-* For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
+* For support: [#demyx](https://web.libera.chat/?channel=#demyx)
