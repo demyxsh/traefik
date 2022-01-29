@@ -1,5 +1,5 @@
 {
   "alpine": "3.14.3",
   "traefik": "init",
-  "version": "2.5.7"
+  "version": "2.6.0"
 }
