@@ -40,7 +40,7 @@ jobs:
         run: |
           DEMYX_TRAEFIK_ALPINE_VERSION="$(docker exec --user=root ${{ env.DEMYX_REPOSITORY }} cat /etc/os-release | grep VERSION_ID | cut -c 12-)"
           DEMYX_TRAEFIK_VERSION="$(docker exec ${{ env.DEMYX_REPOSITORY }} ${{ env.DEMYX_REPOSITORY }} version 2>&1 | sed -n 1p | awk '{print $2}')"
-          DEMYX_JQ="$(jq ".alpine = \"$DEMYX_TRAEFIK_ALPINE_VERSION\" | .version = \"$DEMYX_TRAEFIK_VERSION\"" version.json)"
+          DEMYX_JQ="$(jq ".alpine = \"$DEMYX_TRAEFIK_ALPINE_VERSION\" | .traefik = \"$DEMYX_TRAEFIK_VERSION\"" version.json)"
 
           # Update versions
           echo "$DEMYX_JQ" > version.json
