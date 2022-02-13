@@ -26,7 +26,7 @@ jobs:
           docker build -t demyx/${{ env.DEMYX_REPOSITORY }} .
       - name: Test
         id: test
-        shell: 'script -q -e -c "bash {0}"'
+        #shell: 'script -q -e -c "bash {0}"'
         run: |
           docker run -d --name=${{ env.DEMYX_REPOSITORY }} -e DEMYX_ACME_EMAIL=info@domain.tld demyx/${{ env.DEMYX_REPOSITORY }}
 
