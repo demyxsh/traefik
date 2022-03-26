@@ -1,4 +1,4 @@
 {
-  "alpine": "",
-  "traefik": "response"
+  "alpine": "3.14.4",
+  "traefik": "2.6.2"
 }
