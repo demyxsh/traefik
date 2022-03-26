@@ -30,6 +30,8 @@ jobs:
         run: |
           docker run -d --name=${{ env.DEMYX_REPOSITORY }} -e DEMYX_ACME_EMAIL=info@domain.tld demyx/${{ env.DEMYX_REPOSITORY }}
 
+          sleep 2
+
           DEMYX_TEST="$(docker logs traefik 2>&1 | grep "Configuration loaded from file: /etc/demyx/traefik.yml")"
           if [[ -n "$DEMYX_TEST" ]]; then
             echo "$DEMYX_TEST"
