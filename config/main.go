@@ -15,9 +15,6 @@ var traefikData = `
 entryPoints:
   http:
     address: :8081
-    forwardedHeaders:
-      trustedIPs:
-      - ` + traefikCloudflareIPs() + `
   https:
     address: :8082
     forwardedHeaders:
