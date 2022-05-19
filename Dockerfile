@@ -44,7 +44,7 @@ RUN set -ex; \
     echo 'PS1="$(whoami)@\h:\w \$ "' > /root/.bashrc
 
 # Imports
-COPY --from=demyx_go /build/traefik /usr/local/bin/demyx-entrypoint    
+COPY --from=demyx_go /build/traefik /usr/local/bin/demyx-entrypoint
 
 # Finalize
 RUN set -ex; \
