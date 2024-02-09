@@ -14,6 +14,18 @@
 
 Non-root Docker image running Alpine Linux and Traefik. Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need.
 
+To properly utilize this image, please use [Demyx](https://demyx.sh/readme).
+- Repository - [demyxsh/demyx](https://github.com/demyxsh/demyx)
+- Homepage - [demyx.sh](https://demyx.sh)
+
+[![Demyx Discord](https://discordapp.com/api/guilds/1152828583446859818/widget.png?style=banner2)](https://demyx.sh/discord)
+
+Join us on Discord for latest news, faster support, or just chill.
+
+<a href="https://demyx.sh/sponsor-buymeacoffee" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+Support this project by buying coffee (please).
+
 DEMYX | TRAEFIK
 --- | ---
 USER | demyx
@@ -58,6 +70,6 @@ demyx/traefik
 For more configurations, see Traefik's official documentations: https://docs.traefik.io.
 
 ## Updates & Support
-* Auto built weekly on Saturdays (America/Los_Angeles)
-* Rolling release updates
-* For support: [#demyx](https://web.libera.chat/?channel=#demyx)
+- Auto built weekly on Saturdays (America/Los_Angeles)
+- Rolling release updates
+- For support: [Discord](https://demyx.sh/discord)
