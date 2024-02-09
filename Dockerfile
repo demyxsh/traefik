@@ -1,4 +1,4 @@
-FROM golang:alpine as demyx_go
+FROM golang:alpine3.18 as demyx_go
 
 # Imports
 COPY config /build
