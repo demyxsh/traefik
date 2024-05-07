@@ -14,9 +14,10 @@ import (
 var traefikData = `
 entryPoints:
   http:
-    address: :8081
+    address: :80
   https:
-    address: :8082
+    address: :443
+    http3: {}
     forwardedHeaders:
       trustedIPs:
       - ` + traefikCloudflareIPs() + `
@@ -65,7 +66,8 @@ type TraefikYamlStruct struct {
 			} `yaml:"forwardedHeaders"`
 		} `yaml:"http"`
 		HTTPS struct {
-			Address          string `yaml:"address"`
+			Address          string   `yaml:"address"`
+			HTTP3            struct{} `yaml:"http3"`
 			ForwardedHeaders struct {
 				TrustedIPs []string `yaml:"trustedIPs"`
 			} `yaml:"forwardedHeaders"`

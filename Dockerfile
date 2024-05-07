@@ -57,7 +57,7 @@ RUN set -ex; \
     # Lockdown
     chmod o-x /bin/busybox
 
-EXPOSE 8080 8081 8082
+EXPOSE 8080 80 443
 
 USER demyx
 
