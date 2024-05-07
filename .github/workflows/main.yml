@@ -32,8 +32,8 @@ jobs:
 
           sleep 2
 
-          DEMYX_TEST="$(docker logs traefik 2>&1 | grep "Configuration loaded from file: /etc/demyx/traefik.yml")"
-          if [[ -n "$DEMYX_TEST" ]]; then
+          DEMYX_TEST="$(docker inspect ${{ env.DEMYX_REPOSITORY }} | jq -r '.[] | .State.Status')"
+          if [[ "$DEMYX_TEST" = running ]]; then
             echo "$DEMYX_TEST"
           else
             exit 1
