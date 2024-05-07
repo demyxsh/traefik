@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2024-05-06
+- Misc updates [5e3de2c](https://github.com/demyxsh/traefik/commit/5e3de2c867bc07aded08f606d759e147f93a6f8e)
+- Fix GitHub Actions error [852acf7](https://github.com/demyxsh/traefik/commit/852acf73853284ed5c25bbbf11f453f2afaf430a)
+- Get A+ SSL rating [11c70c8](https://github.com/demyxsh/traefik/commit/11c70c85d460aa42ed5c3590ea77cf9ae1985bdb)
+- Enable http3 [5b8fec5](https://github.com/demyxsh/traefik/commit/5b8fec5c17697f0ac855fda73038218c40646817)
+
 ## 2024-02-08
 - Update description with shameless plug and support link [4af0ee3](https://github.com/demyxsh/traefik/commit/4af0ee3370afec7caaf3394be271b24d3387ba84)
 - Set base image to Alpine 3.18 [567068b](https://github.com/demyxsh/traefik/commit/567068bfc278d1353c81e0096875492a077368d8)
