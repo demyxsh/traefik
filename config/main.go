@@ -157,10 +157,10 @@ func traefikCloudflareIPs() string {
 func main() {
 	// Exit if DEMYX_ACME_EMAIL environment isn't found
 	_, present := os.LookupEnv("DEMYX_ACME_EMAIL")
-    if !present {
+	if !present {
 		fmt.Println("DEMYX_ACME_EMAIL is missing, exiting ...")
 		os.Exit(1)
-    }
+	}
 
 	traefikYml := TraefikYamlStruct{}
 	traefikConfig := os.Getenv("DEMYX_CONFIG") + "/traefik.yml"
@@ -179,7 +179,7 @@ func main() {
 	}
 
 	// Execute Traefik binary and stream output to stdout
-	cmd := exec.Command("traefik", "--configfile="+traefikConfig)
+	cmd := exec.Command("traefik")
 	stdout, _ := cmd.StdoutPipe()
 	if err := cmd.Start(); err != nil {
 		log.Fatal(err)

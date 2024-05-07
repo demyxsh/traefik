@@ -54,11 +54,17 @@ RUN set -ex; \
     echo "$DEMYX_IPV4" > "$DEMYX_CONFIG"/cf_ips; \
     echo "$DEMYX_IPV6" >> "$DEMYX_CONFIG"/cf_ips; \
     \
+    # Link the yaml
+    mkdir -p /etc/traefik; \
+    ln -sf "$DEMYX_CONFIG"/traefik.yml /etc/traefik/traefik.yml; \
+    \
     # Lockdown
     chmod o-x /bin/busybox
 
 EXPOSE 8080 80 443
 
 USER demyx
+
+WORKDIR "$DEMYX"
 
 ENTRYPOINT ["demyx-entrypoint"]
