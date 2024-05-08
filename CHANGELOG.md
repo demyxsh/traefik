@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2024-05-07
+- Revert ports back to 8081 and 8082 for now [98b2e38](https://github.com/demyxsh/traefik/commit/98b2e38db75d26b0518f83be3390b9a106265635)
+
 ## 2024-05-06
 - Misc updates [5e3de2c](https://github.com/demyxsh/traefik/commit/5e3de2c867bc07aded08f606d759e147f93a6f8e)
 - Fix GitHub Actions error [852acf7](https://github.com/demyxsh/traefik/commit/852acf73853284ed5c25bbbf11f453f2afaf430a)
