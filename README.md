@@ -30,7 +30,7 @@ DEMYX | TRAEFIK
 --- | ---
 USER | demyx
 ENTRYPOINT | ["demyx-entrypoint"]
-PORT | 8080 80 443
+PORT | 8080 8081 8082
 
 ## NOTICE
 This repository has been moved to the organization [demyxsh](https://github.com/demyxsh); please update the remote URL.
@@ -61,10 +61,10 @@ docker run -d \
 -e DEMYX_LOG=/var/log/demyx \
 -e DEMYX_ENDPOINT=tcp://demyx_socket:2375 \
 -e DEMYX_ACME_EMAIL=info@domain.tld \ # Required
--p 80:80/tcp \
--p 80:80/udp \
--p 443:443/tcp \
--p 443:443/udp \
+-p 80:8081/tcp \
+-p 80:8081/udp \
+-p 443:8082/tcp \
+-p 443:8082/udp \
 -v traefik:/demyx \     # Point your acme.json storage to this directory (ex: /demyx/acme.json)
 demyx/traefik
 ```

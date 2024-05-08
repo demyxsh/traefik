@@ -14,9 +14,9 @@ import (
 var traefikData = `
 entryPoints:
   http:
-    address: :80
+    address: :8081
   https:
-    address: :443
+    address: :8082
     http3: {}
     forwardedHeaders:
       trustedIPs:
