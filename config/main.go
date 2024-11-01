@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
@@ -147,7 +146,7 @@ type TraefikYamlStruct struct {
 }
 
 func traefikCloudflareIPs() string {
-	cfIPs, err := ioutil.ReadFile(os.Getenv("DEMYX_CONFIG") + "/cf_ips")
+	cfIPs, err := io.ReadFile(os.Getenv("DEMYX_CONFIG") + "/cf_ips")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -175,7 +174,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		ioutil.WriteFile(traefikConfig, traefikYmlMarshal, 0644)
+		io.WriteFile(traefikConfig, traefikYmlMarshal, 0644)
 	}
 
 	// Execute Traefik binary and stream output to stdout
