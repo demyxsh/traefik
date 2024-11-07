@@ -146,7 +146,7 @@ type TraefikYamlStruct struct {
 }
 
 func traefikCloudflareIPs() string {
-	cfIPs, err := io.ReadFile(os.Getenv("DEMYX_CONFIG") + "/cf_ips")
+	cfIPs, err := os.ReadFile(os.Getenv("DEMYX_CONFIG") + "/cf_ips")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -174,7 +174,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		io.WriteFile(traefikConfig, traefikYmlMarshal, 0644)
+		os.WriteFile(traefikConfig, traefikYmlMarshal, 0644)
 	}
 
 	// Execute Traefik binary and stream output to stdout
