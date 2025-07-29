@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2025-07-28
+- Direct people to use demyx [70dab81](https://github.com/demyxsh/traefik/commit/70dab81891ebb42a388c27625f97b76909206e8d)
+- Switch to main ports [c3f1b55](https://github.com/demyxsh/traefik/commit/c3f1b55cb5dae5d3bc465bb5e4bc2f6045d715c6)
+- Update exposed ports [d71d076](https://github.com/demyxsh/traefik/commit/d71d0767b7cf37ff423e1a438fd0f194a28b2723)
+- Fix deprecated warnings [9199275](https://github.com/demyxsh/traefik/commit/9199275dedb2cd025f6d62b888d406b2e22501ba)
+- Update commit message format in GitHub Actions workflow to include run ID [07b5fb9](https://github.com/demyxsh/traefik/commit/07b5fb95a4b7ce72e85361051e7bf44f35f63ab6)
+
 ## 2024-05-07
 - Revert ports back to 8081 and 8082 for now [98b2e38](https://github.com/demyxsh/traefik/commit/98b2e38db75d26b0518f83be3390b9a106265635)
 
