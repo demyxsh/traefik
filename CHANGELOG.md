@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2026-05-09
+- Update builder image from `golang:alpine3.18` to `golang:alpine3.22`
+- Pin runtime image from `traefik` to `traefik:v3`
+
 ## 2025-07-28
 - Direct people to use demyx [70dab81](https://github.com/demyxsh/traefik/commit/70dab81891ebb42a388c27625f97b76909206e8d)
 - Switch to main ports [c3f1b55](https://github.com/demyxsh/traefik/commit/c3f1b55cb5dae5d3bc465bb5e4bc2f6045d715c6)

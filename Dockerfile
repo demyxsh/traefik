@@ -1,4 +1,4 @@
-FROM golang:alpine3.18 as demyx_go
+FROM golang:alpine3.22 as demyx_go
 
 # Imports
 COPY config /build
@@ -9,7 +9,7 @@ RUN set -ex; \
     go mod tidy; \
     go build
 
-FROM traefik
+FROM traefik:v3
 
 LABEL sh.demyx.image        demyx/traefik
 LABEL sh.demyx.maintainer   Demyx <info@demyx.sh>
