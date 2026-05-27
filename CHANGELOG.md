@@ -6,6 +6,7 @@
 ### Changed
 - Move `DEMYX_VERSION` to job-level `env` key set to `1.10.0` instead of resolving dynamically from remote `demyx` orchestrator via a workflow step.
 - Add `v1` moving tag to build and push steps in GitHub Actions workflow.
+- Changed scheduled GitHub Actions build day from Saturday to Thursday.
 ### Fixed
 - None.
 ### Removed
